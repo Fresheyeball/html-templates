@@ -1,0 +1,21 @@
+include mixins/metaItems
+include mixins/mobile
+include mixins/googleAnalytics
+
+!!! 5
+html
+	head
+		title pageName | applicationName
+
+		// Meta Items 
+		mixin metaItems({ allowIE8 : false, copyright : 'some company'})
+
+		// Mobile
+		mixin mobile({ apple : '/path/to/icons', viewport : 'width:1000' })
+
+		// Google Analytics 
+		mixin googleAnalytics({ code : 'UA-XXXXX-XX', egar : true })
+
+	body
+
+		// content
