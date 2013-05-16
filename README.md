@@ -45,6 +45,9 @@ All arguments are optional. Depending on your version of jade, arguments may nee
 
 # Purpose
 
-These templates are intended to be the minium necissary recommended for as many usecases as possible. That means as little opinion as possible, which means no 'twitter bootstrap', 'jquery', 'knockout' or any other libraries. Also no Paul Irish conditional comments or other hacks.
+These templates are intended to be the minimum necessary recommended for as many usecases as possible. That means as little opinion as possible, which means no 'twitter bootstrap', 'jquery', 'knockout' or any other libraries. Also, no Paul Irish conditional comments or other hacks are included.
 
 Adding any of those components to the template assumes asset pipeline along with about 50 other things about how the template is to be used. If you want jQuery from the CDN add it, its cool, its about what you want. :)
+
+
+
