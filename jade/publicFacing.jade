@@ -1,4 +1,5 @@
 include mixins/metaItems
+include mixins/googleAnalytics
 
 !!! 5
 html
@@ -6,4 +7,5 @@ html
 		title pageName | siteName
 
 		- facebook = { title : 'title for facebook', description : 'description html for facebook', image:'/path/to/img.jpg'}
-		mixin metaItems({ allowIE8 : true, author : 'Isaac Shapira', title : 'page title', description : 'page description', designer : 'Isaac Shapira', copyright : 'some company', GA : 'XX-XXXX-XX', facebook : facebook, apple : '/path/to/apple/images', port:'width:1000'})
+		mixin metaItems({ allowIE8 : true, author : 'Isaac Shapira', title : 'page title', description : 'page description', designer : 'Isaac Shapira', copyright : 'some company', facebook : facebook, apple : '/path/to/apple/images', port:'width:1000'})
+		mixin googleAnalytics({ code : 'XX-XXXXX-XX', egar : true })

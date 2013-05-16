@@ -6,8 +6,6 @@
 //-			description : <string>,
 //-			designer 	: <string>,
 //-			copyright 	: <string copyright holder's name>,
-//-			GA 			: <Google Analytics ID>,
-//-			GAegar 		: <Google Analytics ID>,
 //-			facebook	: {
 //-				title 		: <string>
 //-				description	: <html string>
@@ -48,30 +46,6 @@ mixin metaItems (options)
 
 	if options.copyright
 		meta(name="copyright",	content="#{options.copyright} copyright:2013")
-
-	if options.GA
-		script(type="text/javascript")
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', '#{options.GA}']);
-			_gaq.push(['_trackPageview']);
-			(function() { 
-				var ga = document.createElement('script'); 
-				ga.type = 'text/javascript'; 
-				ga.async = true; 
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
-				var s = document.getElementsByTagName('script')[0]; 
-				s.parentNode.insertBefore(ga, s); 
-			})();
-
-	if options.GAegar
-		script(type="text/javascript")
-			var _gaq = [['_setAccount', '#{options.GAegar}'], ['_trackPageview']];
-			(function(d, t){
-				var g = d.createElement(t),
-				s = d.getElementsByTagName(t)[0];
-				g.src = '//www.google-analytics.com/ga.js';
-				s.parentNode.insertBefore(g, s);
-			}(document, 'script'));
 
 	if options.facebook
 		meta(property="og:title",		content="#{options.facebook.title}")
