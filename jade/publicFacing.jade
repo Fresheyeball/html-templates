@@ -1,0 +1,9 @@
+include mixins/metaItems
+
+!!! 5
+html
+	head
+		title pageName | siteName
+
+		- facebook = { title : 'title for facebook', description : 'description html for facebook', image:'/path/to/img.jpg'}
+		mixin metaItems({ allowIE8 : true, author : 'Isaac Shapira', title : 'page title', description : 'page description', designer : 'Isaac Shapira', copyright : 'some company', GA : 'XX-XXXX-XX', facebook : facebook, apple : '/path/to/apple/images', port:'width:1000'})

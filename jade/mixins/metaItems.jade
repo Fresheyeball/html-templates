@@ -1,0 +1,90 @@
+//-		mixin metaItems({
+//-			allowIE8 	: <boolean>,
+//-			html5shive	: <path to html5 (defaults to cdn)>
+//-			author 		: <string>,
+//-			title 		: <string>,
+//-			description : <string>,
+//-			designer 	: <string>,
+//-			copyright 	: <string copyright holder's name>,
+//-			GA 			: <Google Analytics ID>,
+//-			GAegar 		: <Google Analytics ID>,
+//-			facebook	: {
+//-				title 		: <string>
+//-				description	: <html string>
+//-				image 		: <image path>
+//-			},
+//-			apple 		: <image path (directory only)>
+//-			port 		: <viewport content>	
+//-		})
+
+mixin metaItems (options)
+	meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+
+	if options.allowIE8
+		//if lt IE 7
+			meta(http-equiv="refresh",content="0;url=http://browsehappy.com/")
+		//if lt IE 9
+			script(src="//html5shiv.googlecode.com/svn/trunk/html5.js",type='text/javascript')
+	else
+		//if lt IE 8
+			meta(http-equiv="refresh",content="0;url=http://browsehappy.com/")
+
+	noscript		
+		meta(http-equiv="refresh",content="0;url=http://www.enable-javascript.com/")
+	meta(http-equiv="Content-Type",content="text/html; charset=utf-8")
+	link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+
+	if options.author
+		meta(name="author",		content="#{options.author}")
+
+	if options.title
+		meta(name="title",		content="#{options.title}")
+
+	if options.description
+		meta(name="description",content="#{options.description}")
+
+	if options.designer
+		meta(name="designer",	content="#{options.designer}")
+
+	if options.copyright
+		meta(name="copyright",	content="#{options.copyright} copyright:2013")
+
+	if options.GA
+		script(type="text/javascript")
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '#{options.GA}']);
+			_gaq.push(['_trackPageview']);
+			(function() { 
+				var ga = document.createElement('script'); 
+				ga.type = 'text/javascript'; 
+				ga.async = true; 
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+				var s = document.getElementsByTagName('script')[0]; 
+				s.parentNode.insertBefore(ga, s); 
+			})();
+
+	if options.GAegar
+		script(type="text/javascript")
+			var _gaq = [['_setAccount', '#{options.GAegar}'], ['_trackPageview']];
+			(function(d, t){
+				var g = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+				g.src = '//www.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g, s);
+			}(document, 'script'));
+
+	if options.facebook
+		meta(property="og:title",		content="#{options.facebook.title}")
+		meta(property="og:description",	content="#{options.facebook.description}")
+		meta(property="og:image",		content="#{options.facebook.image}")
+		link(rel="image_src",			content="#{options.facebook.image}")
+
+	if options.apple
+		meta(name="apple-mobile-web-app-status-bar-style",content="black-translucent")
+		link(rel="apple-touch-icon",				href="#{options.apple}/apple57.png")
+		link(rel="apple-touch-icon",sizes="72x72",	href="#{options.apple}/apple72.png")
+		link(rel="apple-touch-icon",sizes="114x114",href="#{options.apple}/apple114.png")
+		link(rel="apple-touch-icon",sizes="144x144",href="#{options.apple}/apple144.png")
+
+	if options.port 
+		meta#viewport(name="viewport",content="#{options.port}")
