@@ -11,11 +11,11 @@ However should you choose to use the jade files you will need either
  - [node.js](http://nodejs.org/) with the [jade npm](https://npmjs.org/package/jade) installed
  - [codekit](http://incident57.com/codekit/) a stand alone OSX application that processes any front end language you wish
 
- You can then take advantage of the `mixin`s found in `/jade/mixins`, which will allow you to quickly and easily custom generate an html template.
+You can then take advantage of the `mixin`s found in `/jade/mixins`, which will allow you to quickly and easily custom generate an html template.
 
- ## Mixins
+## Mixins
 
- All arguments are optional. Depending on your version of jade, arguments may need to be all on one line :(
+All arguments are optional. Depending on your version of jade, arguments may need to be all on one line :(
 
 	mixin metaItems({
 		allowIE8 	: <boolean>,
@@ -43,8 +43,8 @@ However should you choose to use the jade files you will need either
 		image 		: <path to image>
 	})	
 
- # Purpose
+# Purpose
 
- These templates are intended to be the minium necissary recommended for as many usecases as possible. That means as little opinion as possible, which means no 'twitter bootstrap', 'jquery', 'knockout' or any other libraries. Also no Paul Irish conditional comments or other hacks.
+These templates are intended to be the minium necissary recommended for as many usecases as possible. That means as little opinion as possible, which means no 'twitter bootstrap', 'jquery', 'knockout' or any other libraries. Also no Paul Irish conditional comments or other hacks.
 
- Adding any of those components to the template assumes asset pipeline along with about 50 other things about how the template is to be used. If you want jQuery from the CDN add it, its cool, its about what you want. :)
+Adding any of those components to the template assumes asset pipeline along with about 50 other things about how the template is to be used. If you want jQuery from the CDN add it, its cool, its about what you want. :)
