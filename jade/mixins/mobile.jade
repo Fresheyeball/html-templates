@@ -1,0 +1,16 @@
+//- 	mixin mobile({
+//- 		apple 		: <path to apple icon directory>,
+//- 		viewport 	: <viewport meta content>
+//-		})
+
+mixin mobile(options)
+
+	if options.apple
+		meta(name="apple-mobile-web-app-status-bar-style",content="black-translucent")
+		link(rel="apple-touch-icon",				href="#{options.apple}/apple57.png")
+		link(rel="apple-touch-icon",sizes="72x72",	href="#{options.apple}/apple72.png")
+		link(rel="apple-touch-icon",sizes="114x114",href="#{options.apple}/apple114.png")
+		link(rel="apple-touch-icon",sizes="144x144",href="#{options.apple}/apple144.png")
+		
+	if options.viewport 
+		meta#viewport(name="viewport",content="#{options.viewport}")
