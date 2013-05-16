@@ -1,0 +1,32 @@
+include mixins/metaItems
+include mixins/mobile
+include mixins/googleAnalytics
+
+- centerImageHeight     = 0
+- centerImageWidth      = 0
+- centerImageSRC        = 'path/to/comingSoon.png'
+- backgroundSRC         = 'path/to/background.jpg'
+- GAAccount             = 'UA-XXXX-XX'
+- pageTitle             = 'Coming Soon'
+- description           = 'Ipsum'
+
+!!! 5
+html
+	head
+		title #{pageTitle}
+
+		// Meta Items
+		mixin metaItems({ title : 'pageTitle}' , description : 'description}' })
+
+		// Mobile
+		mixin mobile({viewport:'width:800'})
+
+		// Google Analytics 
+		mixin googleAnalytics({ code : GAAccount })
+
+		style(type='text/css')
+			body{ background:url('#{backgroundSRC}') top; }
+			img{ position:fixed; left:50%; top:50%; margin-left:#{centerImageWidth / -2}px; margin-top:#{centerImageHeight / -2}px; }
+
+	body
+		img(src="#{centerImageSRC}",height=centerImageHeight,width=centerImageWidth)
