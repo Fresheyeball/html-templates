@@ -1,0 +1,12 @@
+//- 	mixin facebook({
+//-			title 		: <title for facebook>
+//-			description : <html description for facebook>
+//- 		image 		: <path to image>
+//-		})
+
+mixin facebook(options)
+	meta(property="og:title",		content="#{options.title}")
+	meta(property="og:description",	content="#{options.description}")
+	meta(property="og:image",		content="#{options.image}")
+	link(rel="image_src",			content="#{options.image}")
+		

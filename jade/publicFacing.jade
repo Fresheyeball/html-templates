@@ -1,19 +1,25 @@
 include mixins/metaItems
 include mixins/mobile
 include mixins/googleAnalytics
+include mixins/facebook
 
 !!! 5
 html
 	head
 		title pageName | siteName
 
-		- facebook = { title : 'title for facebook', description : 'description html for facebook', image:'/path/to/img.jpg'}
-
 		// Meta Items
-		mixin metaItems({ allowIE8 : true, author : 'Isaac Shapira', title : 'page title', description : 'page description', designer : 'Isaac Shapira', copyright : 'some company', facebook : facebook, apple : '/path/to/apple/images', port:'width:1000'})
+		mixin metaItems({ allowIE8 : true, author : 'Isaac Shapira', title : 'page title', description : 'page description', designer : 'Isaac Shapira', copyright : 'some company'})
 		
 		// Mobile
 		mixin mobile({ apple : '/path/to/icons', viewport : 'width:1000' })
 
+		// facebook
+		mixin facebook({ title : 'title for facebook', description : 'description html for facebook', image : 'path/to/image.jpg' })
+
 		// Google Analytics 
 		mixin googleAnalytics({ code : 'XX-XXXXX-XX', egar : true })
+
+	body(itemscope='itemscope',itemtype='http://schema.org/WebPage')
+
+		// content

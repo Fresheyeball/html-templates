@@ -45,10 +45,4 @@ mixin metaItems (options)
 		meta(name="designer",	content="#{options.designer}")
 
 	if options.copyright
-		meta(name="copyright",	content="#{options.copyright} copyright:2013")
-
-	if options.facebook
-		meta(property="og:title",		content="#{options.facebook.title}")
-		meta(property="og:description",	content="#{options.facebook.description}")
-		meta(property="og:image",		content="#{options.facebook.image}")
-		link(rel="image_src",			content="#{options.facebook.image}")
+		meta(name="copyright",	content="#{options.copyright} copyright:2013")	
