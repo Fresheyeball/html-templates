@@ -17,7 +17,6 @@ You can then take advantage of the `mixin`s found in `/jade/mixins`, which will 
 
 All arguments are optional. Depending on your version of jade, arguments may need to be all on one line :(
 
-	```coffeescript
 	mixin metaItems({
 		allowIE8 	: <boolean>,
 		html5shive	: <path to html5 (defaults to cdn)>
@@ -43,7 +42,6 @@ All arguments are optional. Depending on your version of jade, arguments may nee
 		description : <html description for facebook>,
 		image 		: <path to image>
 	})	
-	```
 
 # Purpose
 
